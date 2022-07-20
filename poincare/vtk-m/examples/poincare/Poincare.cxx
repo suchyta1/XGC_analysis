@@ -1753,7 +1753,8 @@ StreamingPoincare(std::map<std::string, std::vector<std::string>>& args)
     }
 
     int timeStep = step;
-    auto tsVar = dataStuff->io.InquireVariable<int>("tindex");
+    //auto tsVar = dataStuff->io.InquireVariable<int>("tindex");
+    auto tsVar = dataStuff->io.InquireVariable<int>("step");
     if (tsVar)
       dataStuff->engine.Get(tsVar, &timeStep, adios2::Mode::Sync);
 
